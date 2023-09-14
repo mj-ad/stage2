@@ -2,13 +2,13 @@
 ## Request methods and URL
 | Method | URL | Description|
 | ---- | ---- | ---- |
-| GET | /api/<user_id> | Used to retrieve info on a paricular person. |
-| GET | /api/<name> | Used to retrieve info on a paricular person. |
+| GET | /api/user_id | Used to retrieve info on a paricular person. |
+| GET | /api/name | Used to retrieve info on a paricular person. |
 | POST | /api | Used to create new user input. |
-| UPDATE | /api/<user_id> | Used to update a person's information |
-| UPDATE | /api/<name> | Used to update a person's information |
-| DELETE | /api/<user_id> | Used to delete a person's information. |
-| DELETE | /api/<name> | Used to delete a person's information. |
+| UPDATE | /api/user_id | Used to update a person's information |
+| UPDATE | /api/name | Used to update a person's information |
+| DELETE | /api/user_id | Used to delete a person's information. |
+| DELETE | /api/name | Used to delete a person's information. |
 
 ## HTTP Response Status Codes
 | Code | Title | Description|
