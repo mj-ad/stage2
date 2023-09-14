@@ -3,5 +3,5 @@ from api import views
 
 urlpatterns = [
     path('', views.create, name='home'),
-    path('<int:pk>', views.person, name='person'),
+    path('<pk>', views.person, name='person'),
 ]
