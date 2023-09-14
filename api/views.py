@@ -33,8 +33,11 @@ def person(request, pk, *args, **kwargs):
     """
     Update a persons details ie get, update or delete
     """
-    if request.method == 'PUT':
+    if pk.isdigit():
         person = get_object_or_404(Person, pk=pk)
+    else:
+        person = get_object_or_404(Person, name=pk)
+    if request.method == 'PUT':
         serialize = PersonSerializer(person, data=request.data)
         if serialize.is_valid():
             serialize.save()
@@ -51,10 +54,8 @@ def person(request, pk, *args, **kwargs):
                 'message': 'Bad Request',
                 'error': error}, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
-        person = get_object_or_404(Person, pk=pk)
         serializer = PersonSerializer(person)
         return Response(serializer.data, status=status.HTTP_200_OK)
     elif request.method == 'DELETE':
-        person = get_object_or_404(Person, pk=pk)
         person.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
